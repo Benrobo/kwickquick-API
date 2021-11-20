@@ -1,17 +1,21 @@
 const jwt = require("jsonwebtoken")
 
 function checkAuth(req, res, next){
-    let headers = req.headers["Authorization"];
+    let tokens = req.headers["authorization"];
     
-    if(!headers || headers === "" || headersc === undefined){
+    if(!tokens){
         return res.status(400).json({msg: "Authorization header is required"})
     }
-    else{
-        let bearer = headers.split(" ")[1];
-        jwt.verify()
-    }
+    try {
+        let bearer = tokens.split(" ")[1];
+        let decode = jwt.verify(bearer, process.env.JWT_REFRESH_SECRET)
 
-    console.log(headers)
+        req.user = decode;
+        next()
+    } catch (e) {
+        console.log(e)
+        return res.status(400).json({msg: "Invalid token"})
+    }
 }
 
 module.exports = {
