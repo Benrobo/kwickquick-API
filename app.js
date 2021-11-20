@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/kwickquick/api/", require("./routes/register"))
+app.use("/kwickquick/api/", require("./routes/logIn"))
 
 
 const PORT = process.env.NODE_ENV | 5000

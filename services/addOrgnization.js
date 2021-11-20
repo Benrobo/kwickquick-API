@@ -1,5 +1,4 @@
 const conn = require("../db/db")
-const { v4: uuid } = require("uuid");
 const { Error, genId, genPwdHash } = require("../helpers/index")
 
 
