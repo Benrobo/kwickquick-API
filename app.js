@@ -13,9 +13,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use("/kwickquick/api/", require("./routes/register"))
 
-
-Organization.sequelize.sync({ force: true })
 
 const PORT = process.env.NODE_ENV | 5000
 

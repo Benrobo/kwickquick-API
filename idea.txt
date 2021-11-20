@@ -12,11 +12,9 @@ Organization (where or means Organizationq)
     - orPassword
     - orLogo
     - orNumber
-    - refreshToken
+    - refreshToken (default = 0)
     - orEntryDate
     
-
-
 Products
     - id
     - pName
@@ -31,7 +29,16 @@ Products
 
 
 
+Routing methods
 
+
+addCustomer
+-fields
+    -orgName
+    - email
+    - password
+    - image (if no image is provided we use the dicebear api for temp image else store the base64 url)
+    - orNumber
 
 
 
