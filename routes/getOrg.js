@@ -9,6 +9,7 @@ const {checkAuth} = require("../middlewares/auth")
 
 
 router.get("/organizations",checkAuth, (req, res)=>{
+    console.log(req.user)
     return getOrganization(res)
 })
 
