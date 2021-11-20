@@ -1,0 +1,48 @@
+kwickquick database
+
+
+database name = kwickquick
+
+TABLES
+
+Organization (where or means Organizationq)
+    - id
+    - orName
+    - orMail
+    - orPassword
+    - orLogo
+    - orNumber
+    - refreshToken
+    - orEntryDate
+    
+
+
+Products
+    - id
+    - pName
+    - pNUmber
+    - pPrice
+    - pDate
+
+Barcodes (The barcode would have an association of 1:M which means one to many relationship, having date from both tables)
+    - id
+    - orName
+    - orNumber
+    - orMail
+    - pName
+    - pPrice
+    - pNumber
+    - pDate
+    - hash
+
+
+
+
+
+
+
+
+
+
+
+
