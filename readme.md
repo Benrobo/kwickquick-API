@@ -1,8 +1,8 @@
-## Contributing
+## ❤❤ Contributing
 
 before making any pull request, make sure you follow the steps below
 
-- 1). clone the repo to your PC
+- 1). ✅ clone the repo to your PC
 This is the simplest part of Git. Navigate to your forked repository (the repository is now one of your GitHub repositories). Follow steps 1 and 2 as shown in the image below to copy the clone address.
 
 Then, clone the project by typing git clone <the copied address> into your command terminal as shown below:
@@ -11,7 +11,7 @@ Then, clone the project by typing git clone <the copied address> into your comma
     git clone https://github.com/Benrobo/kwickquick-API.git
 ```
 
-- 2). Create the branch you want to work on.
+- 2). 💎 Create the branch you want to work on.
 The upstream is necessary to keep track of the difference between the forked repository that is on your Git account and the original repository.
 It is nice to create a new branch whenever you want to contribute. This illustrates that the branch is only for that contribution you are about to make. It could be as small as fixing a typo or as large as implementing a new feature. Either way, it’s good practice to create a branch.
 
@@ -25,7 +25,7 @@ To create a branch type the following command into your terminal:
 ```
 
 
-- 3).  Git add and commit your contributions
+- 3). 💕 Git add and commit your contributions
 This is quite simple as well. Stage and commit your changes by typing the following into your terminal.
 
 ```javascript
@@ -35,7 +35,7 @@ This is quite simple as well. Stage and commit your changes by typing the follow
 ```
 Now, you have the changes staged and committed. What next?
 
-- 4). Push to the branch you’re working on
+- 4). 🎗💖 Push to the branch you’re working on
 Now, you are almost there. Push your changes to the branch you are working on as shown below:
 
 ```javascript
@@ -43,7 +43,7 @@ Now, you are almost there. Push your changes to the branch you are working on as
     // eg git push origin login-feature
 ```
 
-- 5). Open a pull request
+- 5). 🎉 Open a pull request
 To open a pull request, navigate to the forked repository as shown below. You’ll see your last push branch ‘login-feature’, then click on ‘compare and pull request’.
 
 And that’s it. :) You can now go ahead and contribute like a PRO!
