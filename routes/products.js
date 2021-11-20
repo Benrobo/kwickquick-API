@@ -7,7 +7,6 @@ const addProducts = ({ orgName, email, password, image, orNumber }, res) => {
         return res.status(400).json(Error("No data provided", 400))
     }
 
-    let imageApi = `https://avatars.dicebear.com/api/initials/`
     let orgId = genId()
     let newImg = image === "" || image === undefined ? `${imageApi}${orgName}.svg` : image;
     let hash = genPwdHash(10, password);
