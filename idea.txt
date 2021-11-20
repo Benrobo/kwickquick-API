@@ -20,20 +20,14 @@ Organization (where or means Organizationq)
 Products
     - id
     - pName
-    - pNUmber
-    - pPrice
-    - pDate
-
-Barcodes (The barcode would have an association of 1:M which means one to many relationship, having date from both tables)
-    - id
-    - orName
-    - orNumber
-    - orMail
-    - pName
-    - pPrice
+    - pImage
     - pNumber
+    - pPrice
     - pDate
+    - orId
+    - orName
     - hash
+
 
 
 
