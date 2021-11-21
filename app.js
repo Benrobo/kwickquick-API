@@ -18,6 +18,9 @@ app.use("/kwickquick/api/", require("./routes/logIn"))
 app.use("/kwickquick/api/all", require("./routes/getOrg"))
 app.use("/kwickquick/api/all", require("./routes/getProducts"))
 app.use("/kwickquick/api", require("./routes/products"))
+app.use("/kwickquick/api/", require("./routes/editProducts"))
+app.use("/kwickquick/api/", require("./routes/deleteProduct"))
+app.use("/kwickquick/api/", require("./routes/deleteAllProducts"))
 
 
 const PORT = process.env.NODE_ENV | 5000

@@ -22,11 +22,9 @@ CREATE TABLE products(
     id TEXT UNIQUE NOT NULL PRIMARY KEY,
     "orId" TEXT NOT NULL,
     "pName" TEXT NOT NULL,
-    "pPrice" TEXT NOT NULL UNIQUE,
+    "pPrice" TEXT NOT NULL,
     "pNumber" TEXT NOT NULL,
     "pImage" TEXT NOT NULL,
-    "orNumber" INT NOT NULL,
-    "orName" TEXT NOT NULL,
     "hash" TEXT NOT NULL,
     "pDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );
