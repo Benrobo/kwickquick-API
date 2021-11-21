@@ -40,7 +40,14 @@ addCustomer
     - image (if no image is provided we use the dicebear api for temp image else store the base64 url)
     - orNumber
 
-
+addProducts
+-fields
+    - pName
+    - pImage
+    - pNumber
+    - pPrice
+    - orId
+    - hash (This would be generated based on the organization and product info)
 
 
 

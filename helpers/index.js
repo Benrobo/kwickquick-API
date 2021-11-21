@@ -6,6 +6,10 @@ function genPwdHash(salt, text) {
     return bcrypt.hashSync(text, salt)
 }
 
+// function genProductHash(data){
+//     return jwt.sign()
+// }
+
 function compareHash(pwd, hash){
     return bcrypt.compareSync(pwd, hash)
 }

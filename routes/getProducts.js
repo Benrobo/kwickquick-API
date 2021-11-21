@@ -2,15 +2,15 @@ const express = require("express");
 const router = express.Router();
 
 
-const getOrganization = require("../services/getOrg");
+const getProducts = require("../services/getProducts");
 
 
 const {checkAuth} = require("../middlewares/auth")
 
 
-router.post("/getOrganizations",checkAuth, (req, res)=>{
+router.post("/getProducts",checkAuth, (req, res)=>{
     console.log(req.user)
-    return getOrganization(res)
+    return getProducts(res)
 })
 
 module.exports = router
