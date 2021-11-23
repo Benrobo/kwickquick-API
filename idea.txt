@@ -25,6 +25,7 @@ Products
     - orId
     - orName
     - hash
+    - pCurrency
 
 
 

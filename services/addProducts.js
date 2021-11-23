@@ -2,10 +2,11 @@ const conn = require("../db/db")
 const { Error, genId } = require("../helpers/index")
 
 
-const addProducts = ({orgName, orId, pName, pImage, pNumber, pPrice }, res) => {
-    if (orgName === "" || orgName === undefined || orId === "" || pName === "" || pNumber === "" || pPrice === "") {
+const addProducts = ({pCurrency, orId, pName, pImage, pNumber, pPrice }, res) => {
+    if (orId === "" || pName === "" || pNumber === "" || pPrice === "" || pCurrency === "") {
         return res.status(400).json(Error("No data provided or some fields are empty", 400))
     }
+
 
     let imageApi = `https://avatars.dicebear.com/api/identicon/`
     let productHash = genId()
@@ -14,8 +15,8 @@ const addProducts = ({orgName, orId, pName, pImage, pNumber, pPrice }, res) => {
 
     // insert into table
     try {
-        let sql = `INSERT INTO products(id,"orId","pName","pPrice","pImage","pNumber","hash") VALUES($1,$2,$3,$4,$5,$6,$7)`
-        conn.query(sql, [id, orId, pName, pPrice, newImg, pNumber, productHash], (err) => {
+        let sql = `INSERT INTO products(id,"orId","pName","pPrice","pImage","pNumber","hash","pCurrency") VALUES($1,$2,$3,$4,$5,$6,$7,$8)`
+        conn.query(sql, [id, orId, pName, pPrice, newImg, pNumber, productHash, pCurrency], (err) => {
             if (err) {
                 console.log(err)
                 return res.status(500).json(Error("Something went wrong adding item, please try again", 500))

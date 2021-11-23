@@ -5,7 +5,7 @@ const {checkAuth} = require("../middlewares/auth")
 const addProducts = require("../services/addProducts");
 
 
-router.post("/addProducts",checkAuth, (req, res)=>{
+router.post("/addProducts", (req, res)=>{
     let data = req.body;
     return addProducts(data, res)
 })
