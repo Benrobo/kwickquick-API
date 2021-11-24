@@ -22,7 +22,6 @@ app.use("/kwickquick/api/", require("./routes/editProducts"))
 app.use("/kwickquick/api/", require("./routes/deleteProduct"))
 app.use("/kwickquick/api/", require("./routes/deleteAllProducts"))
 
-
 const PORT = process.env.NODE_ENV | 5000
 
 app.listen(PORT)

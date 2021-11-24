@@ -10,14 +10,13 @@ const addProducts = ({ pCurrency, orId, pName, pImage, pPrice }, res) => {
 
     let imageApi = `https://avatars.dicebear.com/api/identicon/`
     let productHash = genId();
-    let pQrcode = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${productHash}`
     let id = genId()
     let newImg = pImage === "" || pImage === undefined ? `${imageApi}temp%20Image.svg` : pImage;
 
     // insert into table
     try {
-        let sql = `INSERT INTO products(id,"orId","pName","pPrice","pImage","hash","pQrcode","pCurrency") VALUES($1,$2,$3,$4,$5,$6,$7,$8)`
-        conn.query(sql, [id, orId, pName, pPrice, newImg, productHash,pQrcode, pCurrency], (err, data) => {
+        let sql = `INSERT INTO products(id,"orId","pName","pPrice","pImage","hash","pCurrency") VALUES($1,$2,$3,$4,$5,$6,$7)`
+        conn.query(sql, [id, orId, pName, pPrice, newImg, productHash, pCurrency], (err, data) => {
             if (err) {
                 console.log(err)
                 return res.status(500).json(Error("Something went wrong adding item, please try again", 500))
