@@ -2,27 +2,28 @@ const conn = require("../db/db")
 const { Error, genId } = require("../helpers/index")
 
 
-const addProducts = ({pCurrency, orId, pName, pImage, pNumber, pPrice }, res) => {
-    if (orId === "" || pName === "" || pNumber === "" || pPrice === "" || pCurrency === "") {
+const addProducts = ({ pCurrency, orId, pName, pImage, pPrice }, res) => {
+    if (orId === "" || pName === "" || pPrice === "" || pCurrency === "") {
         return res.status(400).json(Error("No data provided or some fields are empty", 400))
     }
 
 
     let imageApi = `https://avatars.dicebear.com/api/identicon/`
-    let productHash = genId()
+    let productHash = genId();
+    let pQrcode = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${productHash}`
     let id = genId()
-    let newImg = pImage === "" || pImage === undefined ? `${imageApi}${orgName}.svg` : pImage;
+    let newImg = pImage === "" || pImage === undefined ? `${imageApi}temp%20Image.svg` : pImage;
 
     // insert into table
     try {
-        let sql = `INSERT INTO products(id,"orId","pName","pPrice","pImage","pNumber","hash","pCurrency") VALUES($1,$2,$3,$4,$5,$6,$7,$8)`
-        conn.query(sql, [id, orId, pName, pPrice, newImg, pNumber, productHash, pCurrency], (err) => {
+        let sql = `INSERT INTO products(id,"orId","pName","pPrice","pImage","hash","pQrcode","pCurrency") VALUES($1,$2,$3,$4,$5,$6,$7,$8)`
+        conn.query(sql, [id, orId, pName, pPrice, newImg, productHash,pQrcode, pCurrency], (err, data) => {
             if (err) {
                 console.log(err)
                 return res.status(500).json(Error("Something went wrong adding item, please try again", 500))
             }
-
-            return res.status(200).json({ msg: "Product item added successfully", code: 200 })
+            console.log(data)
+            return res.status(200).json({ msg: "Product item added successfully", code: 200, productId:productHash })
         })
 
     } catch (e) {

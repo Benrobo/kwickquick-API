@@ -23,8 +23,9 @@ CREATE TABLE products(
     "orId" TEXT NOT NULL,
     "pName" TEXT NOT NULL,
     "pPrice" TEXT NOT NULL,
-    "pNumber" TEXT NOT NULL,
     "pImage" TEXT NOT NULL,
     "hash" TEXT NOT NULL,
+    "pQrcode" TEXT NOT NULL,
+    "pCurrency" TEXT NOT NULL,
     "pDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );
