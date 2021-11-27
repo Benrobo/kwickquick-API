@@ -28,3 +28,16 @@ CREATE TABLE products(
     "pCurrency" TEXT NOT NULL,
     "pDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+-- Payment table
+
+CREATE TABLE payments(
+    id TEXT UNIQUE NOT NULL PRIMARY KEY,
+    "cName" TEXT NOT NULL,
+    "totalQty" TEXT NOT NULL,
+    "pId" TEXT [] NOT NULL,
+    "total" TEXT NOT NULL,
+    "paymentMethod" TEXT NOT NULL,
+    "orgId" TEXT NOT NULL,
+    "pDate" TIMESTAMP NOT NULL DEFAULT NOW()
+);
