@@ -10,7 +10,7 @@ CREATE TABLE organizations(
     "orMail" TEXT NOT NULL UNIQUE,
     "orPassword" TEXT NOT NULL,
     "orLogo" TEXT NOT NULL,
-    "orNumber" INT NOT NULL,
+    "orNumber" TEXT NOT NULL,
     "refreshToken" TEXT NOT NULL,
     "orEntryDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );

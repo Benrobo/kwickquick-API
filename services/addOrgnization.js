@@ -24,7 +24,7 @@ const addOrganization = ({ orgName, email, password, image, orNumber }, res) => 
             }
 
             if (orgdata.rowCount > 0) {
-                return res.status(200).json(Error("Organization with that email already exist", 200))
+                return res.status(400).json(Error("Organization with that email already exist", 400))
             }
             else {
                 let defaultRefreshToken = 0;
@@ -35,7 +35,7 @@ const addOrganization = ({ orgName, email, password, image, orNumber }, res) => 
                         return res.status(500).json(Error("Something went wrong registering organization", 500))
                     }
 
-                    return res.status(200).json({ msg: "organzation registered successfully", code: 200 })
+                    return res.status(200).json({ message: "organzation registered successfully", code: 200 })
                 })
             }
         })

@@ -2,20 +2,19 @@ const conn = require("../db/db")
 const { Error } = require("../helpers/index")
 
 
-const deleteProduct = ({ pId, orId }, res) => {
-    if (orId === "" || pId === "") {
+const deleteProduct = ({ pId, orgId }, res) => {
+    if (orgId === "" || pId === "") {
         return res.status(400).json(Error("No data provided or some fields are empty", 400))
     }
 
     // insert into table
     try {
         let sql = `DELETE FROM products WHERE "orId"=$1 AND id=$2`
-        conn.query(sql, [orId, pId], (err, data) => {
+        conn.query(sql, [orgId, pId], (err, data) => {
             if (err) {
                 console.log(err)
                 return res.status(500).json(Error("Something went wrong deleting item, please try again", 500))
             }
-
             if(data.rowCount === 0){
                 return res.status(404).json(Error("Product cant be deleted cause it doest not exist", 404))
             }
