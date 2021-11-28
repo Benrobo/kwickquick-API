@@ -27,9 +27,10 @@ const addOrganization = ({ orgName, email, password, image, orNumber }, res) => 
                 return res.status(400).json(Error("Organization with that email already exist", 400))
             }
             else {
+                let orgHash = `org-${orgId}`
                 let defaultRefreshToken = 0;
-                let sql = `INSERT INTO organizations(id,"orName","orMail","orPassword","orLogo","orNumber","refreshToken") VALUES($1,$2,$3,$4,$5,$6,$7)`
-                conn.query(sql, [orgId, orgName, email, hash, newImg, orNumber, defaultRefreshToken], (err) => {
+                let sql = `INSERT INTO organizations(id,"orName","orMail","orPassword","orLogo","orNumber","orgHash","refreshToken") VALUES($1,$2,$3,$4,$5,$6,$7,$8)`
+                conn.query(sql, [orgId, orgName, email, hash, newImg, orNumber, orgHash, defaultRefreshToken], (err) => {
                     if (err) {
                         console.log(err)
                         return res.status(500).json(Error("Something went wrong registering organization", 500))

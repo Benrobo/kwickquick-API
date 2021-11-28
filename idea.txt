@@ -51,7 +51,37 @@ addProducts
     - hash (This would be generated based on the organization and product info)
 
 
+payment
+-fields
+    "cName"
+    "totalQty"
+    "pId" TEXT [] NOT NULL,
+    "total"
+    "paymentMethod"
+    "orgId"
+    "pDate" 
 
 
+1. http://localhost:5000/kwickquick/api/getProductsId
+
+2. 
 
 
+Look
+once users scan the product qrcode, it makes request to the server based on the productId from the qrcode. and then returns the following data
+
+{
+    "id": "bfa91ca6-ee45-4714-9a3a-43e4cc5d178f",
+    "orId": "somerandomid",
+    "pName": "updated garri",
+    "pPrice": "10.00",
+    "pImage": "base64",
+    "hash":"a75913ab-f717-4259-baec-756ad7813cca",
+    "pCurrency": "$",
+    "pDate": "2021-11-25T01:23:01.413Z"
+}
+
+then you can make request again from the scanner based on the folloing params (orgId, productId, totalPrice, totalQty, userName) and it can
+ then be stored on the db with the below data
+
+  id | cName | totalQty | pId | total | paymentMethod | orgId | pDate

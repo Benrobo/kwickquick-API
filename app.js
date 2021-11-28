@@ -18,6 +18,9 @@ app.use("/kwickquick/api/", require("./routes/logIn"))
 app.use("/kwickquick/api/all", require("./routes/getOrg"))
 app.use("/kwickquick/api/all", require("./routes/getProducts"))
 app.use("/kwickquick/api/all/", require("./routes/getOrgProducts"))
+// get products based on  orgId and productId
+app.use("/kwickquick/api/", require("./routes/getOrgProductsId"))
+app.use("/kwickquick/api/", require("./routes/getProductsId"))
 app.use("/kwickquick/api", require("./routes/products"))
 app.use("/kwickquick/api/", require("./routes/editProduct"))
 app.use("/kwickquick/api/", require("./routes/deleteProduct"))
@@ -26,6 +29,9 @@ app.use("/kwickquick/api/", require("./routes/deleteAllProducts"))
 // update products
 app.use("/kwickquick/api/", require("./routes/editProduct"))
 app.use("/kwickquick/api/", require("./routes/editProductImage"))
+
+// payments
+app.use("/kwickquick/api/", require("./routes/payments"))
 
 
 // get products

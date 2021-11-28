@@ -11,6 +11,7 @@ CREATE TABLE organizations(
     "orPassword" TEXT NOT NULL,
     "orLogo" TEXT NOT NULL,
     "orNumber" TEXT NOT NULL,
+    "orgHash" TEXT,
     "refreshToken" TEXT NOT NULL,
     "orEntryDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );
@@ -34,10 +35,10 @@ CREATE TABLE products(
 CREATE TABLE payments(
     id TEXT UNIQUE NOT NULL PRIMARY KEY,
     "cName" TEXT NOT NULL,
-    "totalQty" TEXT NOT NULL,
-    "pId" TEXT [] NOT NULL,
     "total" TEXT NOT NULL,
     "paymentMethod" TEXT NOT NULL,
     "orgId" TEXT NOT NULL,
+    "orgHash" TEXT,
+    status TEXT,
     "pDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );
