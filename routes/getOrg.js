@@ -5,12 +5,9 @@ const router = express.Router();
 const getOrganization = require("../services/getOrg");
 
 
-const {checkAuth} = require("../middlewares/auth")
-
-
-router.post("/getOrganizations",checkAuth, (req, res)=>{
-    console.log(req.user)
-    return getOrganization(res)
+router.post("/getOrganizations", (req, res) => {
+    let data = req.body;
+    return getOrganization(data, res)
 })
 
 module.exports = router
