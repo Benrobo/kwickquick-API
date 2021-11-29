@@ -37,4 +37,9 @@ app.use("/kwickquick/api/", require("./routes/payments"))
 // get products
 const PORT = process.env.PORT | 5000
 
-app.listen(PORT)
+app.get("/", (req, res)=>{
+    return res.json({msg: "hey welcome to kwickquick"})
+})
+
+
+app.listen(PORT, "0.0.0.0")
