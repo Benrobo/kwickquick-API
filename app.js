@@ -35,6 +35,6 @@ app.use("/kwickquick/api/", require("./routes/payments"))
 
 
 // get products
-const PORT = process.env.NODE_ENV | 5000
+const PORT = process.env.PORT | 5000
 
 app.listen(PORT)

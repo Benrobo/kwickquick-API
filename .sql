@@ -38,7 +38,21 @@ CREATE TABLE payments(
     "total" TEXT NOT NULL,
     "paymentMethod" TEXT NOT NULL,
     "orgId" TEXT NOT NULL,
-    "orgHash" TEXT,
+    "pHash" TEXT [] NOT NULL,
+    "orgHash" TEXT [] NOT NULL,
     status TEXT,
+    "expiry" TEXT NOT NULL,
     "pDate" TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+
+
+
+
+
+
+
+
+
+
+

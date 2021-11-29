@@ -13,7 +13,11 @@ const getOrganization = (data, res) => {
                 return res.status(500).json(Error("Something went wrong registering organization", 500))
             }
 
-            return res.status(200).json(orgdata.rows)
+            if (orgdata.rowCount === 0) {
+                return res.status(404).json([])
+            }
+
+            return res.status(200).json(new Array({ logo: orgdata.rows[0].orLogo, name: orgdata.rows[0].orName }))
         })
 
     } catch (e) {
